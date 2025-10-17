@@ -1,0 +1,11 @@
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraformrc
+terraform.rc
+*.tfvars
+*.tfvars.json
+.vscode/
+.idea/
+.DS_Store
+modules/lambda-rds-apigw/lambda_function.zip
