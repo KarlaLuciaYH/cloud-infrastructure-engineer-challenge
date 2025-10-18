@@ -1,8 +1,8 @@
 import requests
 import json
 
-#API_ENDPOINT = "{API Gateway endpoint url}/{stage}"
-API_ENDPOINT = "https://vtrwgx2fyi.execute-api.us-east-1.amazonaws.com/v1"
+API_ENDPOINT = "{API Gateway endpoint url}/{stage}"
+#API_ENDPOINT = "https://yyyyy.execute-api.us-east-1.amazonaws.com/v1"
 
 def test_api():
     response = requests.get(API_ENDPOINT + "/info")

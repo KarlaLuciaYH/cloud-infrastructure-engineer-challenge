@@ -23,3 +23,4 @@ username                = "postgres"
 #TAGGING
 project     = "cloud-infra-challenge"
 environment = "dev"
+owner       = "karla.yacolca"

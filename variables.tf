@@ -90,3 +90,8 @@ variable "project" {
   type    = string
   default = "cloud-infra-challenge"
 }
+
+variable "owner" {
+  type    = string
+  default = ""
+}

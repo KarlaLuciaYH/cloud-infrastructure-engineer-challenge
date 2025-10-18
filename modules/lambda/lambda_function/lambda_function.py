@@ -6,7 +6,7 @@ import psycopg2
 DB_ENDPOINT_ADDRESS = os.environ['DB_ENDPOINT_ADDRESS']
 DB_SECRET_ARN = os.environ['DB_SECRET_ARN']
 DB_NAME = os.environ['DB_NAME']
-DB_PORT = os.environ.get('DB_PORT', 5432)
+DB_PORT = int(os.environ.get('DB_PORT', 5432))
 REGION = os.environ.get('REGION', "us-east-1")
 
 def lambda_handler(event, context):
