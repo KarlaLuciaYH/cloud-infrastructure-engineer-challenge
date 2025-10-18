@@ -8,4 +8,6 @@ terraform.rc
 .vscode/
 .idea/
 .DS_Store
+modules/*/.terraform.lock.hcl
 modules/lambda-rds-apigw/lambda_function.zip
+modules/lambda/lambda_function.zip
