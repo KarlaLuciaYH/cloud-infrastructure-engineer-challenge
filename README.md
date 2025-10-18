@@ -96,6 +96,8 @@ The **GitHub Actions** workflow (`.github/workflows/terrafrom-ci.yaml`) runs mul
 ```bash
 # Initialize Terraform
 terraform init
+# In case provider versions need to be upgraded, use:
+terraform init --upgrade
 
 # Review the plan
 terraform plan
