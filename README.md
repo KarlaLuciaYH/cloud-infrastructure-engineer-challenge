@@ -2,7 +2,7 @@
 
 ## Overview
 
-The solution provisions a complete AWS architecture using **Terraform** (v1.5+) and **AWS provider v4.67.0**, following best practices for networking, security, and modularity.
+The solution provisions a complete AWS architecture using **Terraform** (v1.5+) and **AWS provider v6.17.0**, following best practices for networking, security, and modularity.
 
 ## Architecture Description
 
@@ -12,7 +12,7 @@ The deployed architecture consists of the following components:
 - **VPC** with:
   - **2 Public Subnets** (one per AZ)
   - **2 Private Subnets** (one per AZ)
-- **2 NAT Gateways** (one in each public subnet)  
+- **2 NAT Gateways** (one in each public subnet)
   This prevents cross-AZ data transfer costs and ensures high availability.
 - Proper **route tables** and **security groups** for secure communication.
 
@@ -34,10 +34,10 @@ The deployed architecture consists of the following components:
 
 ### Database Layer
 - **Amazon RDS for PostgreSQL**
-  - Deployed within **private subnets** for enhanced security and isolation.  
-  - Integrates with **AWS Secrets Manager** for automatic password generation and rotation, as described in the [official AWS announcement](https://aws.amazon.com/about-aws/whats-new/2022/12/amazon-rds-integration-aws-secrets-manager/).  
+  - Deployed within **private subnets** for enhanced security and isolation.
+  - Integrates with **AWS Secrets Manager** for automatic password generation and rotation, as described in the [official AWS announcement](https://aws.amazon.com/about-aws/whats-new/2022/12/amazon-rds-integration-aws-secrets-manager/).
   - Avoids hardcoding credentials or storing them in Terraform state (`tfstate`).
-  - Uses **non–T-series instance types** (e.g., `m5`, `r6g`) to avoid issues with CPU credit depletion that can cause performance throttling.  
+  - Uses **non–T-series instance types** (e.g., `m5`, `r6g`) to avoid issues with CPU credit depletion that can cause performance throttling.
 
 
 ## Design Considerations
@@ -127,7 +127,7 @@ You can test it using the provided **`test-api.py`** script.
 ## Recommendations
 
 - **Enable Multi-AZ** for RDS in production to improve availability, aligning with the existing design that includes a NAT Gateway per Availability Zone.
-- **Add CloudWatch Alarms** for Lambda errors and RDS CPU utilization.  
+- **Add CloudWatch Alarms** for Lambda errors and RDS CPU utilization.
 - **Use RDS Proxy with Lambda** to reduce the load on the database server since a new connection is not created for every Lambda invocation, improving scalability and performance.
 
 <!-- BEGIN_TF_DOCS -->
@@ -137,20 +137,17 @@ You can test it using the provided **`test-api.py`** script.
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_archive"></a> [archive](#requirement\_archive) | ~> 2.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.0 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_archive"></a> [archive](#provider\_archive) | 2.7.1 |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
+No providers.
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_aws-lambda-rds-apigw"></a> [aws-lambda-rds-apigw](#module\_aws-lambda-rds-apigw) | ../../modules/aws-lambda-rds-apigw | n/a |
+| <a name="module_aws-lambda-rds-apigw"></a> [aws-lambda-rds-apigw](#module\_aws-lambda-rds-apigw) | ./modules/aws-lambda-rds-apigw | n/a |
 
 ## Resources
 
@@ -162,7 +159,6 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_allocated_storage"></a> [allocated\_storage](#input\_allocated\_storage) | n/a | `number` | `20` | no |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | The AWS region to create things in. | `string` | `"us-east-1"` | no |
-| <a name="input_azs"></a> [azs](#input\_azs) | A list of availability zones names or ids in the region | `list(string)` | `[]` | no |
 | <a name="input_azs_count"></a> [azs\_count](#input\_azs\_count) | Number of AZs to be created | `number` | `2` | no |
 | <a name="input_backup_retention_period"></a> [backup\_retention\_period](#input\_backup\_retention\_period) | n/a | `number` | `7` | no |
 | <a name="input_dbname"></a> [dbname](#input\_dbname) | n/a | `string` | `"postgres"` | no |
@@ -176,15 +172,12 @@ No resources.
 | <a name="input_project"></a> [project](#input\_project) | n/a | `string` | `"cloud-infra-challenge"` | no |
 | <a name="input_public_subnets"></a> [public\_subnets](#input\_public\_subnets) | List of public subnets CIDR | `list(string)` | n/a | yes |
 | <a name="input_stage_name"></a> [stage\_name](#input\_stage\_name) | n/a | `string` | `"dev"` | no |
-| <a name="input_storage_encrypted"></a> [storage\_encrypted](#input\_storage\_encrypted) | n/a | `bool` | `true` | no |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags default | `map(string)` | `{}` | no |
 | <a name="input_username"></a> [username](#input\_username) | n/a | `string` | `"postgres"` | no |
 | <a name="input_vpc_cidr"></a> [vpc\_cidr](#input\_vpc\_cidr) | CIDR block of the VPC | `string` | n/a | yes |
+
 ## Outputs
 
 | Name | Description |
 |------|-------------|
 | <a name="output_api_gateway_url"></a> [api\_gateway\_url](#output\_api\_gateway\_url) | The full URL of the API Gateway stage |
 <!-- END_TF_DOCS -->
-
-

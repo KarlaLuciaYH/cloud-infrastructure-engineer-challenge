@@ -1,3 +1,17 @@
+terraform {
+  required_version = ">= 1.5.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+    archive = {
+      source  = "hashicorp/archive"
+      version = "~> 2.5"
+    }
+  }
+}
 
 # DATA
 data "aws_region" "current" {}
@@ -134,7 +148,7 @@ resource "aws_lambda_function" "lambda-function" {
       DB_NAME             = var.db_name
       DB_PORT             = var.db_port
       DB_SECRET_ARN       = var.db_instance_master_user_secret_arn
-      REGION              = data.aws_region.current.name
+      REGION              = data.aws_region.current.id
 
     }
   }

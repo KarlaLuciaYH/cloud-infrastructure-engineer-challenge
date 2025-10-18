@@ -1,3 +1,14 @@
+terraform {
+  required_version = ">= 1.5.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
+}
+
 data "aws_availability_zones" "available" {}
 
 locals {
@@ -59,8 +70,7 @@ resource "aws_internet_gateway" "igw" {
 
 resource "aws_eip" "nat_eip" {
   count = length(local.azs)
-  #domain = "vpc"
-  vpc = true
+  #vpc = true
   tags = merge(var.tags, {
     Name = "${var.project}-eip-${count.index + 1}"
   })

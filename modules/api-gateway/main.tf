@@ -1,3 +1,13 @@
+terraform {
+  required_version = ">= 1.5.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
+}
 
 resource "aws_api_gateway_rest_api" "api" {
   name = "${var.project}-api"
@@ -29,7 +39,13 @@ resource "aws_api_gateway_integration" "api_integration" {
 resource "aws_api_gateway_deployment" "api_deployment" {
   depends_on  = [aws_api_gateway_integration.api_integration]
   rest_api_id = aws_api_gateway_rest_api.api.id
-  stage_name  = var.stage_name
+  #stage_name  = var.stage_name
+}
+
+resource "aws_api_gateway_stage" "stage" {
+  deployment_id = aws_api_gateway_deployment.api_deployment.id
+  rest_api_id   = aws_api_gateway_rest_api.api.id
+  stage_name    = var.stage_name
 }
 
 resource "aws_lambda_permission" "api_gw" {

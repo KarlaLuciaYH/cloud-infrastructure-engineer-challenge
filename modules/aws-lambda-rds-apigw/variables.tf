@@ -1,11 +1,5 @@
 # NETWORK
 
-variable "azs" {
-  description = "A list of availability zones names or ids in the region"
-  type        = list(string)
-  default     = []
-}
-
 variable "azs_count" {
   description = "Number of AZs to be created"
   type        = number
@@ -54,11 +48,6 @@ variable "max_allocated_storage" {
 variable "backup_retention_period" {
   type    = number
   default = 7
-}
-
-variable "storage_encrypted" {
-  type    = bool
-  default = true
 }
 
 variable "multi_az" {

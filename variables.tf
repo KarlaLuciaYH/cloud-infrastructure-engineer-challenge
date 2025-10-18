@@ -60,6 +60,7 @@ variable "multi_az" {
   type    = bool
   default = false
 }
+
 variable "dbname" {
   type    = string
   default = "postgres"

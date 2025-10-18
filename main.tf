@@ -1,3 +1,4 @@
+
 module "aws-lambda-rds-apigw" {
   source  = "./modules/aws-lambda-rds-apigw"
   project = var.project
@@ -13,7 +14,6 @@ module "aws-lambda-rds-apigw" {
   allocated_storage       = var.allocated_storage
   max_allocated_storage   = var.max_allocated_storage
   backup_retention_period = var.backup_retention_period
-  storage_encrypted       = true
   multi_az                = var.multi_az
   dbname                  = var.dbname
   engine                  = var.engine
