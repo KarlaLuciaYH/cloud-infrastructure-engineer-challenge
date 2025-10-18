@@ -5,14 +5,14 @@
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.5.0 |
 | <a name="requirement_archive"></a> [archive](#requirement\_archive) | ~> 2.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | = 4.67.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_archive"></a> [archive](#provider\_archive) | ~> 2.5 |
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.0 |
+| <a name="provider_archive"></a> [archive](#provider\_archive) | 2.7.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.67.0 |
 
 ## Modules
 
@@ -22,37 +22,37 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_api_gateway_deployment.api_deployment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_deployment) | resource |
-| [aws_api_gateway_integration.api_integration](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_integration) | resource |
-| [aws_api_gateway_method.api_method](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_method) | resource |
-| [aws_api_gateway_resource.api_resource](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_resource) | resource |
-| [aws_api_gateway_rest_api.api](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/api_gateway_rest_api) | resource |
-| [aws_db_instance.db_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
-| [aws_db_subnet_group.dbsubnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group) | resource |
-| [aws_eip.nat_eip](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eip) | resource |
-| [aws_iam_policy.lambda_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_role.lambda_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy_attachment.s3_access_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_internet_gateway.igw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway) | resource |
-| [aws_lambda_function.lambda-function](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
-| [aws_lambda_layer_version.lambda_layer](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_layer_version) | resource |
-| [aws_lambda_permission.api_gw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
-| [aws_nat_gateway.natgw](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/nat_gateway) | resource |
-| [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table) | resource |
-| [aws_route_table_association.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_route_table_association.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route_table_association) | resource |
-| [aws_security_group.security_group_lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group.security_group_rds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
-| [aws_security_group_rule.lambda_access](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.lambda_to_internet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_security_group_rule.lambda_to_rds](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule) | resource |
-| [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet) | resource |
-| [aws_vpc.vpc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc) | resource |
+| [aws_api_gateway_deployment.api_deployment](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/api_gateway_deployment) | resource |
+| [aws_api_gateway_integration.api_integration](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/api_gateway_integration) | resource |
+| [aws_api_gateway_method.api_method](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/api_gateway_method) | resource |
+| [aws_api_gateway_resource.api_resource](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/api_gateway_resource) | resource |
+| [aws_api_gateway_rest_api.api](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/api_gateway_rest_api) | resource |
+| [aws_db_instance.db_instance](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/db_instance) | resource |
+| [aws_db_subnet_group.dbsubnet](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/db_subnet_group) | resource |
+| [aws_eip.nat_eip](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/eip) | resource |
+| [aws_iam_policy.lambda_policy](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/iam_policy) | resource |
+| [aws_iam_role.lambda_role](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.s3_access_attachment](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_internet_gateway.igw](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/internet_gateway) | resource |
+| [aws_lambda_function.lambda-function](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/lambda_function) | resource |
+| [aws_lambda_layer_version.lambda_layer](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/lambda_layer_version) | resource |
+| [aws_lambda_permission.api_gw](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/lambda_permission) | resource |
+| [aws_nat_gateway.natgw](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/nat_gateway) | resource |
+| [aws_route_table.private](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/route_table) | resource |
+| [aws_route_table.public](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/route_table) | resource |
+| [aws_route_table_association.private](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/route_table_association) | resource |
+| [aws_route_table_association.public](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/route_table_association) | resource |
+| [aws_security_group.security_group_lambda](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/security_group) | resource |
+| [aws_security_group.security_group_rds](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/security_group) | resource |
+| [aws_security_group_rule.lambda_access](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.lambda_to_internet](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/security_group_rule) | resource |
+| [aws_security_group_rule.lambda_to_rds](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/security_group_rule) | resource |
+| [aws_subnet.private](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/subnet) | resource |
+| [aws_subnet.public](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/subnet) | resource |
+| [aws_vpc.vpc](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/resources/vpc) | resource |
 | [archive_file.lambda_package](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
-| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/availability_zones) | data source |
-| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
+| [aws_availability_zones.available](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/data-sources/availability_zones) | data source |
+| [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/4.67.0/docs/data-sources/region) | data source |
 
 ## Inputs
 
